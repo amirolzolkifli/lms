@@ -18,6 +18,9 @@
 		<link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}">
 		<link rel="apple-touch-icon" href="{{ asset('assets/img/apple-icon.png') }}">
 
+		<!-- Theme Settings Js -->
+		<script src="{{ asset('assets/js/theme-script.js') }}"></script>
+
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 
@@ -43,6 +46,9 @@
 
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 
 	</head>
 	<body>
@@ -97,7 +103,9 @@
                             <div class="loginbox">
                                 <div class="w-100">
                                     <div class="d-flex align-items-center justify-content-between login-header">
-                                        <img src="{{ asset('assets/img/logo.svg') }}" class="img-fluid" alt="Logo">
+                                        <a href="{{ url('/') }}">
+                                            <img src="{{ asset('assets/img/logo-white.svg') }}" class="img-fluid" alt="Logo">
+                                        </a>
                                         <a href="{{ url('/') }}" class="link-1">Back to Home</a>
                                     </div>
 

@@ -9,7 +9,7 @@
                 <div class="col-lg-4">
                     <div class="footer-about">
                         <div class="footer-logo">
-                            <img src="{{ asset('assets/img/logo.svg') }}" alt="">
+                            <img src="{{ asset('assets/img/logo-white.svg') }}" alt="">
                         </div>
                         <p>Platform designed to help organizations, educators, and learners manage, deliver, and track learning and training activities.</p>
                     </div>

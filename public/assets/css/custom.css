@@ -79,3 +79,229 @@
     margin: 0 auto !important;
     text-align: center !important;
 }
+
+/* Login Page - Dark Mode Support */
+/* Light mode - Use same purple as welcome page banner */
+.login-content .login-bg {
+    background: #392C7D !important;
+}
+
+/* Dark mode - Left side (banner) same purple */
+.dark-mode .login-content .login-bg {
+    background: #392C7D !important;
+}
+
+/* Dark mode - Right side (form area) should be darker */
+.dark-mode .login-content .login-wrap-bg {
+    background-color: #1F2937 !important;
+}
+
+/* Remove any borders/gaps between columns */
+.dark-mode .login-content .row {
+    margin: 0 !important;
+}
+
+.dark-mode .login-content [class*="col-"] {
+    padding: 0 !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* Fix text colors in dark mode */
+.dark-mode .login-content .mentor-course h3 {
+    color: #E5E7EB;
+}
+
+.dark-mode .login-content .mentor-course p {
+    color: #9CA3AF;
+}
+
+/* Ensure form text is visible in dark mode */
+.dark-mode .loginbox {
+    color: #E5E7EB;
+}
+
+.dark-mode .loginbox .topic {
+    color: #F9FAFB;
+}
+
+.dark-mode .form-label {
+    color: #D1D5DB;
+}
+
+.dark-mode .form-control {
+    background-color: #374151;
+    border-color: #4B5563;
+    color: #E5E7EB;
+}
+
+.dark-mode .form-control:focus {
+    background-color: #4B5563;
+    border-color: #6B7280;
+    color: #F9FAFB;
+}
+
+/* Fix Remember Me checkbox label visibility */
+.dark-mode .form-check-label,
+.dark-mode .remember-me label {
+    color: #E5E7EB !important;
+}
+
+.dark-mode .form-check-input {
+    background-color: #374151;
+    border-color: #4B5563;
+}
+
+.dark-mode .form-check-input:checked {
+    background-color: #FF4667;
+    border-color: #FF4667;
+}
+
+/* Banner Section - Fix text visibility on dark background */
+.banner-section .banner-content h1 {
+    color: #FFFFFF !important;
+}
+
+.banner-section .banner-content h1 span {
+    color: #FF4667 !important;
+}
+
+.banner-section .banner-content p {
+    color: #E5E7EB !important;
+}
+
+.banner-section .banner-content .hero-title {
+    background-color: #1F2147 !important;
+    color: #FFFFFF !important;
+}
+
+.banner-section .counter-item p {
+    color: #D1D5DB !important;
+}
+
+/* Footer - Make background lighter in dark mode */
+.dark-mode .footer {
+    background-color: #111827 !important;
+}
+
+/* Footer - Copyright text */
+.footer-bottom .copyright-text p {
+    color: #FFFFFF !important;
+}
+
+/* Welcome Page - Navbar Improvements */
+/* Make menu items bolder and more prominent - DESKTOP ONLY */
+@media (min-width: 992px) {
+    .header-one .main-nav li a {
+        font-weight: 600 !important;
+        font-size: 15px !important;
+        letter-spacing: 0.3px;
+    }
+
+    .header-one .main-nav li.active a {
+        font-weight: 700 !important;
+        color: #FF4667 !important;
+    }
+}
+
+/* Mobile Menu - Only add dark mode support without breaking template CSS */
+@media (max-width: 991.98px) {
+    /* Dark mode colors only */
+    .dark-mode .main-menu-wrapper {
+        background-color: #1F2937 !important;
+    }
+
+    .dark-mode .menu-header {
+        background: #1F2937 !important;
+    }
+
+    .dark-mode .menu-close {
+        color: #E5E7EB !important;
+    }
+
+    .dark-mode .main-nav > li > a {
+        color: #E5E7EB !important;
+    }
+
+    /* Make menu items more visible */
+    .main-nav li a {
+        font-weight: 600;
+    }
+
+    .main-nav li.active a {
+        font-weight: 700;
+        color: #FF4667;
+    }
+}
+
+/* Improve button styling */
+.header-one .header-btn .btn {
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    line-height: 1.5 !important;
+}
+
+.header-one .header-btn .btn-primary {
+    background-color: #FF4667 !important;
+    border-color: #FF4667 !important;
+    border-width: 1px !important;
+    padding: 10px 24px !important;
+}
+
+.header-one .header-btn .btn-primary:hover {
+    background-color: #E63956 !important;
+    border-color: #E63956 !important;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.header-one .header-btn .btn-secondary {
+    background-color: transparent !important;
+    border: 2px solid white !important;
+    color: white !important;
+    padding: 9px 23px !important;
+}
+
+.header-one .header-btn .btn-secondary:hover {
+    background-color: white !important;
+    border-color: white !important;
+    color: #FF4667 !important;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* CTA Section - Get Started Now button */
+.cta-section {
+    margin-bottom: 60px !important;
+}
+
+.cta-section .cta-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.cta-section .cta-content h2 {
+    margin-bottom: 8px !important;
+    color: #FFFFFF !important;
+}
+
+.cta-section .cta-content p {
+    margin-bottom: 0 !important;
+    color: #E5E7EB !important;
+}
+
+.cta-section .btn-white {
+    background-color: #5B21B6 !important;
+    border-color: #5B21B6 !important;
+    color: white !important;
+}
+
+.cta-section .btn-white:hover {
+    background-color: #7C3AED !important;
+    border-color: #7C3AED !important;
+    color: white !important;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}

@@ -58,6 +58,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 
+    <!-- Simple Mobile Menu CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/simple-mobile-menu.css') }}">
+
     @stack('styles')
 
 </head>
@@ -105,6 +108,9 @@
 
     <!-- Custom JS -->
     <script src="{{ asset('assets/js/script.js') }}"></script>
+
+    <!-- Simple Mobile Menu JS -->
+    <script src="{{ asset('assets/js/simple-mobile-menu.js') }}"></script>
 
     @stack('scripts')
 

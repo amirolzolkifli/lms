@@ -14,7 +14,8 @@
       "Bash(printenv:*)",
       "Bash(unset:*)",
       "Bash(mkdir:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(ls \"C:\\laragon\\www\\mylms\\dev_resources\\html\\html\\template\"\" | grep -i \"index \")"
     ],
     "deny": [],
     "ask": []
