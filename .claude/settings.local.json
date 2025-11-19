@@ -1,21 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(composer create-project:*)",
-      "Bash(mv:*)",
-      "Bash(rm:*)",
+      "Bash(php artisan make:migration:*)",
+      "Bash(php artisan migrate:*)",
+      "Bash(php artisan view:clear:*)",
       "Bash(php artisan:*)",
-      "Bash(composer require:*)",
-      "Bash(mysql:*)",
-      "Bash(ip route:*)",
-      "Bash(echo:*)",
-      "Bash(cat:*)",
-      "Bash(php -r:*)",
-      "Bash(printenv:*)",
-      "Bash(unset:*)",
-      "Bash(mkdir:*)",
-      "Bash(cp:*)",
-      "Bash(ls \"C:\\laragon\\www\\mylms\\dev_resources\\html\\html\\template\"\" | grep -i \"index \")"
+      "Bash(composer:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,11 +1,12 @@
 @extends('layouts.auth')
 
-@section('title', 'Register')
+@section('title', 'Trainer Registration')
 
 @section('content')
-    <h1 class="fs-32 fw-bold topic">Sign up</h1>
+    <h1 class="fs-32 fw-bold topic">Trainer Sign up</h1>
+    <p class="mb-4 text-gray-7">Register as a trainer and start creating courses</p>
 
-    <form method="POST" action="{{ route('register') }}" class="mb-3 pb-3">
+    <form method="POST" action="{{ route('trainer.register') }}" class="mb-3 pb-3" enctype="multipart/form-data">
         @csrf
 
         <!-- Full Name -->
@@ -32,6 +33,33 @@
                 <span><i class="isax isax-sms input-icon text-gray-7 fs-14"></i></span>
             </div>
             @error('email')
+                <div class="invalid-feedback d-block">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <!-- Company/School Name -->
+        <div class="mb-3 position-relative">
+            <label class="form-label" for="company_name">Company/School Name<span class="text-danger ms-1">*</span></label>
+            <div class="position-relative">
+                <input type="text" id="company_name" name="company_name" value="{{ old('company_name') }}"
+                       class="form-control form-control-lg @error('company_name') is-invalid @enderror"
+                       required autocomplete="organization">
+                <span><i class="isax isax-building input-icon text-gray-7 fs-14"></i></span>
+            </div>
+            @error('company_name')
+                <div class="invalid-feedback d-block">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <!-- Logo Upload -->
+        <div class="mb-3 position-relative">
+            <label class="form-label" for="logo">Company/School Logo</label>
+            <div class="position-relative">
+                <input type="file" id="logo" name="logo" accept="image/*"
+                       class="form-control form-control-lg @error('logo') is-invalid @enderror">
+            </div>
+            <small class="form-text text-muted">Optional. Max size: 2MB. Formats: JPG, PNG, GIF</small>
+            @error('logo')
                 <div class="invalid-feedback d-block">{{ $message }}</div>
             @enderror
         </div>
@@ -80,7 +108,7 @@
 
         <!-- Sign Up Button -->
         <div class="d-grid">
-            <button class="btn btn-secondary btn-lg" type="submit">Sign Up <i class="isax isax-arrow-right-3 ms-1"></i></button>
+            <button class="btn btn-secondary btn-lg" type="submit">Sign Up as Trainer <i class="isax isax-arrow-right-3 ms-1"></i></button>
         </div>
     </form>
 
@@ -89,6 +117,6 @@
         Already you have an account?<a href="{{ route('login') }}" class="link-2 ms-1"> Login</a>
     </div>
     <div class="fs-14 fw-normal d-flex align-items-center justify-content-center mt-2">
-        Register as a trainer?<a href="{{ route('trainer.register.form') }}" class="link-2 ms-1"> Trainer Registration</a>
+        Register as a student?<a href="{{ route('register') }}" class="link-2 ms-1"> Student Registration</a>
     </div>
 @endsection

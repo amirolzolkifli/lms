@@ -21,6 +21,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'roles',
+        'company_name',
+        'logo',
+        'plan',
+        'validity',
     ];
 
     /**
@@ -43,6 +48,21 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'roles' => 'array',
+            'validity' => 'date',
         ];
+    }
+
+    /**
+     * Get the user's roles.
+     *
+     * @return array
+     */
+    protected function roles(): \Illuminate\Database\Eloquent\Casts\Attribute
+    {
+        return \Illuminate\Database\Eloquent\Casts\Attribute::make(
+            get: fn ($value) => $value ? json_decode($value, true) : ['student'],
+            set: fn ($value) => json_encode($value ?? ['student'])
+        );
     }
 }

@@ -63,7 +63,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-sm-12">
                         <div class="copyright-text">
-                            <p>&copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.</p>
+                            <p>&copy; {{ date('Y') }} {{ setting('site_name', config('app.name')) }}. All rights reserved.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12">

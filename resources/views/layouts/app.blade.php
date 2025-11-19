@@ -11,7 +11,7 @@
     <meta name="author" content="Dreams Technologies">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Dreams LMS') }} - @yield('title', 'Dashboard')</title>
+    <title>{{ setting('site_name', config('app.name', 'Dreams LMS')) }} - @yield('title', 'Dashboard')</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}">
