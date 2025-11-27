@@ -14,7 +14,7 @@
             <div class="col-xl-7 col-lg-7">
                 <div class="banner-content pe-xxl-5">
                     <span class="hero-title">The Leader in Online Learning</span>
-                    <h1 class="mb-4 text-white">Find the Best <span>Courses</span> from the Best <span>Mentors</span> Around the World</h1>
+                    <h1 class="mb-4 text-white">Unlock Your <span>Potential</span> with Expert-Led <span>Learning</span> Experiences</h1>
                     <p class="fs-lg text-center text-md-start pb-2 pb-md-3 mb-4">Our specialized online courses are designed to bring the classroom experience to you, no matter where you are.</p>
 
                     <div class="d-flex align-items-center gap-4 justify-content-lg-between justify-content-center flex-wrap">
