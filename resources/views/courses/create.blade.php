@@ -14,7 +14,7 @@
                 <h5 class="mb-0">Create New Course</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('courses.store') }}" method="POST">
+                <form action="{{ route('app.courses.store') }}" method="POST">
                     @csrf
 
                     <div class="mb-4">
@@ -90,7 +90,7 @@
                     </div>
 
                     <div class="d-flex justify-content-end gap-2">
-                        <a href="{{ route('courses.index') }}" class="btn btn-secondary">Cancel</a>
+                        <a href="{{ route('app.courses.index') }}" class="btn btn-secondary">Cancel</a>
                         <button type="submit" class="btn btn-primary">
                             <i class="isax isax-add me-2"></i>Create Course
                         </button>

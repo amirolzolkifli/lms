@@ -36,7 +36,7 @@ class CourseController extends Controller
         $currentCourseCount = Course::where('user_id', $user->id)->count();
 
         if ($currentCourseCount >= $courseLimit) {
-            return redirect()->route('courses.index')
+            return redirect()->route('app.courses.index')
                 ->with('error', 'You have reached your course limit. Please upgrade your plan.');
         }
 
@@ -55,7 +55,7 @@ class CourseController extends Controller
         $currentCourseCount = Course::where('user_id', $user->id)->count();
 
         if ($currentCourseCount >= $courseLimit) {
-            return redirect()->route('courses.index')
+            return redirect()->route('app.courses.index')
                 ->with('error', 'You have reached your course limit. Please upgrade your plan.');
         }
 
@@ -76,7 +76,7 @@ class CourseController extends Controller
             'status' => $request->status
         ]);
 
-        return redirect()->route('courses.index')
+        return redirect()->route('app.courses.index')
             ->with('success', 'Course created successfully!');
     }
 
@@ -125,7 +125,7 @@ class CourseController extends Controller
             'status'
         ]));
 
-        return redirect()->route('courses.index')
+        return redirect()->route('app.courses.index')
             ->with('success', 'Course updated successfully!');
     }
 
@@ -138,7 +138,7 @@ class CourseController extends Controller
 
         $course->delete();
 
-        return redirect()->route('courses.index')
+        return redirect()->route('app.courses.index')
             ->with('success', 'Course deleted successfully!');
     }
 }

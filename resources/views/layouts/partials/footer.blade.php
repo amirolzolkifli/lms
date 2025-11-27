@@ -20,8 +20,8 @@
                             <div class="footer-widget footer-menu">
                                 <h5 class="footer-title">For Students</h5>
                                 <ul>
-                                    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                                    <li><a href="{{ route('profile.edit') }}">My Profile</a></li>
+                                    <li><a href="{{ route('app.dashboard') }}">Dashboard</a></li>
+                                    <li><a href="{{ route('app.profile.edit') }}">My Profile</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                                 <h5 class="footer-title">Pages</h5>
                                 <ul>
                                     <li><a href="{{ url('/') }}">Home</a></li>
-                                    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                                    <li><a href="{{ route('app.dashboard') }}">Dashboard</a></li>
                                 </ul>
                             </div>
                         </div>

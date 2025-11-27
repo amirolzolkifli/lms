@@ -54,7 +54,7 @@
                     <div class="tab-pane fade {{ request('tab') != 'pricing' ? 'show active' : '' }}"
                          id="general"
                          role="tabpanel">
-                        <form action="{{ route('settings.update') }}" method="POST">
+                        <form action="{{ route('app.admin.settings.update') }}" method="POST">
                     @csrf
                     @method('PUT')
 
@@ -149,7 +149,7 @@
                     <div class="tab-pane fade {{ request('tab') == 'pricing' ? 'show active' : '' }}"
                          id="pricing"
                          role="tabpanel">
-                        <form action="{{ route('settings.pricing.update') }}" method="POST">
+                        <form action="{{ route('app.admin.settings.pricing.update') }}" method="POST">
                             @csrf
                             @method('PUT')
 
@@ -157,7 +157,7 @@
                                 <!-- Basic Plan -->
                                 <div class="col-md-6">
                                     <div class="card mb-3">
-                                        <div class="card-header bg-secondary text-white">
+                                        <div class="card-header">
                                             <h6 class="mb-0">Basic Plan</h6>
                                         </div>
                                         <div class="card-body">
@@ -224,7 +224,7 @@
                                 <!-- Pro Plan -->
                                 <div class="col-md-6">
                                     <div class="card mb-3">
-                                        <div class="card-header bg-primary text-white">
+                                        <div class="card-header">
                                             <h6 class="mb-0">Pro Plan</h6>
                                         </div>
                                         <div class="card-body">

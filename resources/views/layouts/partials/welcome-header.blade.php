@@ -42,8 +42,8 @@
                         <a href="{{ url('/contact') }}">Contact</a>
                     </li>
                     @auth
-                        <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                            <a href="{{ route('dashboard') }}">Dashboard</a>
+                        <li class="{{ request()->is('app*') ? 'active' : '' }}">
+                            <a href="{{ route('app.dashboard') }}">Dashboard</a>
                         </li>
                     @endauth
                 </ul>
@@ -56,7 +56,7 @@
                             <i class="isax isax-user-edit me-2"></i>Register
                         </a>
                     @else
-                        <a href="{{ route('dashboard') }}" class="btn btn-primary w-100 mb-2">
+                        <a href="{{ route('app.dashboard') }}" class="btn btn-primary w-100 mb-2">
                             <i class="isax isax-grid-35 me-2"></i>Dashboard
                         </a>
                         <form method="POST" action="{{ route('logout') }}">
@@ -77,7 +77,7 @@
                         Register
                     </a>
                 @else
-                    <a href="{{ route('dashboard') }}" class="btn btn-primary d-inline-flex align-items-center me-2">
+                    <a href="{{ route('app.dashboard') }}" class="btn btn-primary d-inline-flex align-items-center me-2">
                         Dashboard
                     </a>
                     <form method="POST" action="{{ route('logout') }}" class="d-inline">
@@ -131,8 +131,8 @@
                 </a>
             </li>
             @auth
-                <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                    <a href="{{ route('dashboard') }}">
+                <li class="{{ request()->is('app*') ? 'active' : '' }}">
+                    <a href="{{ route('app.dashboard') }}">
                         <i class="isax isax-grid-35 me-2"></i>Dashboard
                     </a>
                 </li>
@@ -149,7 +149,7 @@
                 <i class="isax isax-user-edit me-2"></i>Register
             </a>
         @else
-            <a href="{{ route('dashboard') }}" class="btn btn-primary">
+            <a href="{{ route('app.dashboard') }}" class="btn btn-primary">
                 <i class="isax isax-grid-35 me-2"></i>Dashboard
             </a>
             <form method="POST" action="{{ route('logout') }}">

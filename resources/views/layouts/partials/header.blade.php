@@ -29,7 +29,7 @@
                 </div>
                 <ul class="main-nav">
                     <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ route('app.dashboard') }}">Dashboard</a></li>
                 </ul>
             </div>
             <div class="header-btn d-flex align-items-center">
@@ -51,7 +51,7 @@
                         </div>
                         <ul class="profile-body">
                             <li>
-                                <a class="dropdown-item d-inline-flex align-items-center rounded fw-medium" href="{{ route('profile.edit') }}">
+                                <a class="dropdown-item d-inline-flex align-items-center rounded fw-medium" href="{{ route('app.profile.edit') }}">
                                     <i class="isax isax-security-user me-2"></i>My Profile
                                 </a>
                             </li>

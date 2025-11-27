@@ -37,7 +37,7 @@ class SettingController extends Controller
         set_setting('chip_brand_id', $request->chip_brand_id);
         set_setting('chip_api_key', $request->chip_api_key);
 
-        return redirect()->route('settings.index')
+        return redirect()->route('app.admin.settings.index')
             ->with('success', 'Settings updated successfully!');
     }
 
@@ -70,7 +70,7 @@ class SettingController extends Controller
             'student_limit' => $request->pro_student_limit,
         ]);
 
-        return redirect()->route('settings.index', ['tab' => 'pricing'])
+        return redirect()->route('app.admin.settings.index', ['tab' => 'pricing'])
             ->with('success', 'Pricing settings updated successfully!');
     }
 }

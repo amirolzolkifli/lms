@@ -159,7 +159,7 @@
             </div>
             <div class="col-lg-4 text-lg-end">
                 @auth
-                    <a href="{{ route('dashboard') }}" class="btn btn-white btn-lg">Go to Dashboard</a>
+                    <a href="{{ route('app.dashboard') }}" class="btn btn-white btn-lg">Go to Dashboard</a>
                 @else
                     <a href="{{ route('register') }}" class="btn btn-white btn-lg">Get Started Now</a>
                 @endauth

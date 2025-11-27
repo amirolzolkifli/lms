@@ -14,7 +14,7 @@
                 <h5 class="mb-0">Upload Material - {{ $course->title }}</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('course-materials.store', $course) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('app.course-materials.store', $course) }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-4">
@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="d-flex justify-content-end gap-2">
-                        <a href="{{ route('course-materials.index', $course) }}" class="btn btn-secondary">Cancel</a>
+                        <a href="{{ route('app.course-materials.index', $course) }}" class="btn btn-secondary">Cancel</a>
                         <button type="submit" class="btn btn-primary">
                             <i class="isax isax-document-upload me-2"></i>Upload Material
                         </button>

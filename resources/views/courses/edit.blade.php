@@ -14,7 +14,7 @@
                 <h5 class="mb-0">Edit Course</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('courses.update', $course) }}" method="POST">
+                <form action="{{ route('app.courses.update', $course) }}" method="POST">
                     @csrf
                     @method('PUT')
 
@@ -92,7 +92,7 @@
                     </div>
 
                     <div class="d-flex justify-content-end gap-2">
-                        <a href="{{ route('courses.index') }}" class="btn btn-secondary">Cancel</a>
+                        <a href="{{ route('app.courses.index') }}" class="btn btn-secondary">Cancel</a>
                         <button type="submit" class="btn btn-primary">
                             <i class="isax isax-save-2 me-2"></i>Update Course
                         </button>

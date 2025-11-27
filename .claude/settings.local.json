@@ -5,7 +5,8 @@
       "Bash(php artisan migrate:*)",
       "Bash(php artisan view:clear:*)",
       "Bash(php artisan:*)",
-      "Bash(composer:*)"
+      "Bash(composer:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

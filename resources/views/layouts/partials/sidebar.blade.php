@@ -1,83 +1,79 @@
 <div class="settings-sidebar bg-light p-3 rounded">
     <div>
-        @if(in_array('admin', Auth::user()->roles ?? []))
-        <h6 class="mb-3">Admin Section</h6>
-        <ul class="mb-3 pb-1">
-            <li>
-                <a href="{{ route('dashboard') }}" class="d-inline-flex align-items-center {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                    <i class="isax isax-grid-35 me-2"></i>Dashboard
-                </a>
-            </li>
-            <li>
-                <a href="#" class="d-inline-flex align-items-center">
-                    <i class="isax isax-teacher me-2"></i>Manage Trainer
-                </a>
-            </li>
-            <li>
-                <a href="#" class="d-inline-flex align-items-center">
-                    <i class="isax isax-book-15 me-2"></i>Manage Courses
-                </a>
-            </li>
-            <li>
-                <a href="#" class="d-inline-flex align-items-center">
-                    <i class="isax isax-people me-2"></i>Manage Student
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('settings.index') }}" class="d-inline-flex align-items-center {{ request()->routeIs('settings.*') ? 'active' : '' }}">
-                    <i class="isax isax-setting-2 me-2"></i>Settings
-                </a>
-            </li>
-        </ul>
-        @elseif(in_array('trainer', Auth::user()->roles ?? []))
-        <h6 class="mb-3">Trainer Menu</h6>
-        <ul class="mb-3 pb-1">
-            <li>
-                <a href="{{ route('dashboard') }}" class="d-inline-flex align-items-center {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                    <i class="isax isax-grid-35 me-2"></i>Dashboard
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('courses.index') }}" class="d-inline-flex align-items-center {{ request()->routeIs('courses.*') ? 'active' : '' }}">
-                    <i class="isax isax-book-15 me-2"></i>My Courses
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('profile.edit') }}" class="d-inline-flex align-items-center {{ request()->routeIs('profile.*') ? 'active' : '' }}">
-                    <i class="fa-solid fa-user me-2"></i>My Profile
-                </a>
-            </li>
-        </ul>
-        @else
         <h6 class="mb-3">Main Menu</h6>
         <ul class="mb-3 pb-1">
             <li>
-                <a href="{{ route('dashboard') }}" class="d-inline-flex align-items-center {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                    <i class="isax isax-grid-35 me-2"></i>Dashboard
+                <a href="{{ route('app.dashboard') }}" class="d-inline-flex align-items-center {{ request()->routeIs('app.dashboard') ? 'active' : '' }}">
+                    <i class="isax isax-home-2 me-2"></i><span>Dashboard</span>
                 </a>
             </li>
+        </ul>
+
+        @if(in_array('student', Auth::user()->roles ?? []))
+        <h6 class="mb-3">Student Menu</h6>
+        <ul class="mb-3 pb-1">
             <li>
-                <a href="{{ route('profile.edit') }}" class="d-inline-flex align-items-center {{ request()->routeIs('profile.*') ? 'active' : '' }}">
-                    <i class="fa-solid fa-user me-2"></i>My Profile
+                <a href="#" class="d-inline-flex align-items-center">
+                    <i class="isax isax-book me-2"></i><span>My Courses</span>
                 </a>
             </li>
         </ul>
         @endif
-        <h6 class="mb-3">Account Settings</h6>
-        <ul>
+
+        @if(in_array('trainer', Auth::user()->roles ?? []))
+        <h6 class="mb-3">Trainer Menu</h6>
+        <ul class="mb-3 pb-1">
             <li>
-                <a href="{{ route('profile.edit') }}" class="d-inline-flex align-items-center {{ request()->routeIs('profile.*') ? 'active' : '' }}">
-                    <i class="isax isax-setting-2 me-2"></i>Settings
+                <a href="{{ route('app.courses.index') }}" class="d-inline-flex align-items-center {{ request()->routeIs('app.courses.*') ? 'active' : '' }}">
+                    <i class="isax isax-book me-2"></i><span>My Courses</span>
+                </a>
+            </li>
+        </ul>
+        @endif
+
+        @if(in_array('admin', Auth::user()->roles ?? []))
+        <h6 class="mb-3">Admin Section</h6>
+        <ul class="mb-3 pb-1">
+            <li>
+                <a href="#" class="d-inline-flex align-items-center">
+                    <i class="isax isax-teacher me-2"></i><span>Manage Trainer</span>
                 </a>
             </li>
             <li>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit" class="d-inline-flex align-items-center border-0 bg-transparent w-100 text-start p-0">
-                        <i class="isax isax-logout me-2"></i>Logout
-                    </button>
-                </form>
+                <a href="#" class="d-inline-flex align-items-center">
+                    <i class="isax isax-book-square me-2"></i><span>Manage Courses</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="d-inline-flex align-items-center">
+                    <i class="isax isax-people me-2"></i><span>Manage Student</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('app.admin.settings.index') }}" class="d-inline-flex align-items-center {{ request()->routeIs('app.admin.settings.*') ? 'active' : '' }}">
+                    <i class="isax isax-setting-2 me-2"></i><span>Settings</span>
+                </a>
             </li>
         </ul>
+        @endif
+
+        <h6 class="mb-3">Account Settings</h6>
+        <ul>
+            <li>
+                <a href="{{ route('app.profile.edit') }}" class="d-inline-flex align-items-center {{ request()->routeIs('app.profile.*') ? 'active' : '' }}">
+                    <i class="isax isax-user me-2"></i><span>Profile</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Logout Button - Separate from menu -->
+        <div class="mt-4 pt-3 sidebar-logout">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="btn btn-outline-danger w-100 d-inline-flex align-items-center justify-content-center">
+                    <i class="isax isax-logout me-2"></i><span>Logout</span>
+                </button>
+            </form>
+        </div>
     </div>
 </div>

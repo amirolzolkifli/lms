@@ -45,7 +45,7 @@ class PlanController extends Controller
                 'validity' => null
             ]);
 
-            return redirect()->route('dashboard')
+            return redirect()->route('app.dashboard')
                 ->with('success', 'You have successfully subscribed to the Basic Plan!');
         }
 

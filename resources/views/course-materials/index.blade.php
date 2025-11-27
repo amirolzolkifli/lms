@@ -20,10 +20,10 @@
                         </p>
                     </div>
                     <div class="d-flex gap-2">
-                        <a href="{{ route('courses.index') }}" class="btn btn-secondary">
+                        <a href="{{ route('app.courses.index') }}" class="btn btn-secondary">
                             <i class="isax isax-arrow-left me-2"></i>Back to Courses
                         </a>
-                        <a href="{{ route('course-materials.create', $course) }}" class="btn btn-primary">
+                        <a href="{{ route('app.course-materials.create', $course) }}" class="btn btn-primary">
                             <i class="isax isax-document-upload me-2"></i>Upload Material
                         </a>
                     </div>
@@ -49,7 +49,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover materials-table">
                             <thead>
                                 <tr>
                                     <th>Title</th>
@@ -57,35 +57,35 @@
                                     <th>File Name</th>
                                     <th>Size</th>
                                     <th>Uploaded</th>
-                                    <th>Actions</th>
+                                    <th class="text-center">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($materials as $material)
                                 <tr>
-                                    <td>{{ $material->title }}</td>
+                                    <td class="material-title">{{ $material->title }}</td>
                                     <td>
-                                        <span class="badge bg-{{ $material->type === 'video' ? 'primary' : 'info' }}">
+                                        <span class="badge material-type-badge {{ $material->type === 'video' ? 'type-video' : 'type-document' }}">
                                             <i class="isax isax-{{ $material->type === 'video' ? 'video' : 'document' }} me-1"></i>
                                             {{ ucfirst($material->type) }}
                                         </span>
                                     </td>
-                                    <td>{{ $material->file_name }}</td>
-                                    <td>{{ $material->file_size_formatted }}</td>
-                                    <td>{{ $material->created_at->format('d M Y') }}</td>
+                                    <td class="material-filename">{{ $material->file_name }}</td>
+                                    <td class="material-size">{{ $material->file_size_formatted }}</td>
+                                    <td class="material-date">{{ $material->created_at->format('d M Y') }}</td>
                                     <td>
-                                        <div class="btn-group btn-group-sm">
-                                            <a href="{{ route('course-materials.download', [$course, $material]) }}"
-                                               class="btn btn-outline-primary">
+                                        <div class="d-flex gap-2 justify-content-center">
+                                            <a href="{{ route('app.course-materials.download', [$course, $material]) }}"
+                                               class="btn btn-sm btn-material-action btn-download">
                                                 <i class="isax isax-document-download"></i>
                                             </a>
-                                            <form action="{{ route('course-materials.destroy', [$course, $material]) }}"
+                                            <form action="{{ route('app.course-materials.destroy', [$course, $material]) }}"
                                                   method="POST"
                                                   class="d-inline"
                                                   onsubmit="return confirm('Are you sure you want to delete this material?')">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-outline-danger">
+                                                <button type="submit" class="btn btn-sm btn-material-action btn-delete">
                                                     <i class="isax isax-trash"></i>
                                                 </button>
                                             </form>
@@ -108,7 +108,7 @@
                     <i class="isax isax-document text-gray-5" style="font-size: 64px;"></i>
                     <h5 class="mt-3">No materials yet</h5>
                     <p class="text-muted">Upload your first material to get started</p>
-                    <a href="{{ route('course-materials.create', $course) }}" class="btn btn-primary mt-3">
+                    <a href="{{ route('app.course-materials.create', $course) }}" class="btn btn-primary mt-3">
                         <i class="isax isax-document-upload me-2"></i>Upload Material
                     </a>
                 </div>

@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Profile Box -->
-<div class="profile-card overflow-hidden bg-blue-gradient2 mb-5 p-5">
+<div class="profile-card overflow-hidden bg-blue-gradient2 mb-4 p-5">
     <div class="profile-card-bg">
         <img src="{{ asset('assets/img/bg/card-bg-01.png') }}" class="profile-card-bg-1" alt="">
     </div>
@@ -18,7 +18,7 @@
                 <div>
                     <h5 class="mb-1 text-white d-inline-flex align-items-center">
                         <a href="javascript:void(0);" class="text-white">{{ Auth::user()->name }}</a>
-                        <a href="{{ route('profile.edit') }}" class="link-light fs-16 ms-2"><i class="isax isax-edit-2"></i></a>
+                        <a href="{{ route('app.profile.edit') }}" class="link-light fs-16 ms-2"><i class="isax isax-edit-2"></i></a>
                     </h5>
                     <p class="text-light">Student</p>
                 </div>

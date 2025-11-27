@@ -1,6 +1,323 @@
 /* Custom CSS for AzbahriLMS */
 
-/* Header Styling - Slightly darker tone in dark mode */
+/* =============================================
+   Dark Mode Cards - Better visibility
+   ============================================= */
+
+/* General card styling for dark mode */
+.dark-mode .card {
+    background-color: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .card:hover {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.dark-mode .card-header {
+    background-color: #334155 !important;
+    border-bottom: 1px solid #475569 !important;
+}
+
+.dark-mode .card-footer {
+    background-color: #334155 !important;
+    border-top: 1px solid #475569 !important;
+}
+
+/* Sidebar card */
+.dark-mode .settings-sidebar {
+    background-color: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Stats cards on dashboard */
+.dark-mode .card.instructor-card,
+.dark-mode .card.stat-card,
+.dark-mode .stat-card {
+    background-color: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Course cards */
+.dark-mode .course-box {
+    background-color: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Table styling */
+.dark-mode .table {
+    background-color: #1e293b !important;
+}
+
+.dark-mode .table thead th {
+    background-color: #334155 !important;
+    border-color: #475569 !important;
+}
+
+.dark-mode .table td,
+.dark-mode .table th {
+    border-color: #334155 !important;
+}
+
+.dark-mode .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #263448 !important;
+}
+
+/* Form inputs in cards */
+.dark-mode .card .form-control,
+.dark-mode .card .form-select {
+    background-color: #263448 !important;
+    border-color: #475569 !important;
+    color: #e2e8f0 !important;
+}
+
+.dark-mode .card .form-control:focus,
+.dark-mode .card .form-select:focus {
+    background-color: #334155 !important;
+    border-color: #60a5fa !important;
+}
+
+/* Select dropdown arrow color for dark mode */
+.dark-mode .card .form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
+/* Alert boxes - consistent styling without borders */
+.dark-mode .alert {
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+.dark-mode .alert-info {
+    background-color: #1e3a5f !important;
+    color: #e2e8f0 !important;
+}
+
+.dark-mode .alert-info i {
+    color: #60a5fa !important;
+}
+
+.dark-mode .alert-success {
+    background-color: #14532d !important;
+    color: #d1fae5 !important;
+}
+
+.dark-mode .alert-success i {
+    color: #4ade80 !important;
+}
+
+.dark-mode .alert-success .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.dark-mode .alert-warning {
+    background-color: #713f12 !important;
+    color: #fef3c7 !important;
+}
+
+.dark-mode .alert-warning i {
+    color: #fbbf24 !important;
+}
+
+.dark-mode .alert-danger {
+    background-color: #7f1d1d !important;
+    color: #fee2e2 !important;
+}
+
+.dark-mode .alert-danger i {
+    color: #f87171 !important;
+}
+
+/* Nav tabs in cards */
+.dark-mode .nav-tabs {
+    border-bottom-color: #475569 !important;
+}
+
+.dark-mode .nav-tabs .nav-link {
+    border-color: transparent !important;
+    color: #94a3b8 !important;
+}
+
+.dark-mode .nav-tabs .nav-link:hover {
+    border-color: #475569 #475569 transparent !important;
+    color: #e2e8f0 !important;
+}
+
+.dark-mode .nav-tabs .nav-link.active {
+    background-color: #1e293b !important;
+    border-color: #475569 #475569 #1e293b !important;
+    color: #f1f5f9 !important;
+}
+
+/* =============================================
+   Dark Mode Text Visibility
+   ============================================= */
+
+/* Sidebar text colors */
+.dark-mode .settings-sidebar a,
+.dark-mode .settings-sidebar button,
+.dark-mode .settings-sidebar span {
+    color: #cbd5e1 !important;
+}
+
+.dark-mode .settings-sidebar a:hover,
+.dark-mode .settings-sidebar button:hover,
+.dark-mode .settings-sidebar a:hover i,
+.dark-mode .settings-sidebar a:hover span {
+    color: #f1f5f9 !important;
+}
+
+.dark-mode .settings-sidebar a.active,
+.dark-mode .settings-sidebar a.active i,
+.dark-mode .settings-sidebar a.active span {
+    color: #f87171 !important;
+}
+
+.dark-mode .settings-sidebar h6 {
+    color: #f1f5f9 !important;
+}
+
+/* Sidebar section separators */
+.settings-sidebar ul {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.settings-sidebar ul:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Sidebar menu item spacing and hover effect */
+.settings-sidebar li {
+    margin-bottom: 4px;
+}
+
+.settings-sidebar li:last-child {
+    margin-bottom: 0;
+}
+
+.settings-sidebar li a,
+.settings-sidebar li button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    display: flex !important;
+    width: 100%;
+}
+
+.dark-mode .settings-sidebar li a:hover,
+.dark-mode .settings-sidebar li button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .settings-sidebar li a.active {
+    background-color: rgba(248, 113, 113, 0.1);
+}
+
+/* Sidebar Logout Button */
+.settings-sidebar .sidebar-logout .btn-outline-danger {
+    padding: 10px 16px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.dark-mode .settings-sidebar .sidebar-logout .btn-outline-danger {
+    color: #fecaca;
+    border-color: transparent;
+    background-color: rgba(220, 38, 38, 0.3);
+}
+
+.dark-mode .settings-sidebar .sidebar-logout .btn-outline-danger:hover {
+    color: #fff;
+    background-color: rgba(220, 38, 38, 0.8);
+    border-color: transparent;
+}
+
+/* Section header styling */
+.settings-sidebar h6 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.7;
+    margin-top: 4px;
+}
+
+/* General text in dark mode */
+.dark-mode p,
+.dark-mode span,
+.dark-mode label {
+    color: #cbd5e1;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3,
+.dark-mode h4, .dark-mode h5, .dark-mode h6 {
+    color: #f1f5f9;
+}
+
+.dark-mode .text-gray-9 {
+    color: #94a3b8 !important;
+}
+
+/* Card body text */
+.dark-mode .card-body p,
+.dark-mode .card-body span {
+    color: #cbd5e1;
+}
+
+/* =============================================
+   Consistent Border Radius
+   ============================================= */
+
+/* Unified border radius for all cards (10px to match template) */
+.dark-mode .card,
+.dark-mode .settings-sidebar,
+.dark-mode .profile-card,
+.dark-mode .course-box,
+.dark-mode .alert {
+    border-radius: 10px !important;
+}
+
+.dark-mode .card-header {
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.dark-mode .card-footer {
+    border-radius: 0 0 10px 10px !important;
+}
+
+/* =============================================
+   Consistent Spacing
+   ============================================= */
+
+/* Profile card spacing */
+.dark-mode .profile-card {
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Sidebar margin to match stats cards row */
+.settings-sidebar {
+    margin-bottom: 1.5rem;
+}
+
+/* Consistent card margins */
+.dark-mode .card {
+    margin-bottom: 1.5rem;
+}
+
+.dark-mode .card.flex-fill {
+    margin-bottom: 0;
+}
+
+/* Row gaps for stats */
+.row.mb-4 > [class*="col-"] {
+    margin-bottom: 0;
+}
+
+/* Header Styling - Semi-transparent dark like welcome page */
 .header-two {
     background-color: rgba(0, 0, 0, 0.3) !important;
     backdrop-filter: blur(10px);
@@ -8,8 +325,20 @@
 }
 
 .dark-mode .header-two {
-    background-color: rgba(0, 0, 0, 0.4) !important;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Main wrapper - transparent to allow section backgrounds */
+.dark-mode .main-wrapper {
+    background: transparent;
+    min-height: 100vh;
+}
+
+/* Content area - transparent to show gradient */
+.dark-mode .content {
+    background-color: transparent;
 }
 
 /* Welcome page header */
@@ -70,6 +399,74 @@
 .bg-warning-transparent,
 .bg-success-transparent,
 .bg-info-transparent {
+    border-radius: 50% !important;
+}
+
+/* Dashboard Stats Cards - Consistent height and alignment */
+.dashboard-banner-section .row.mb-4 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dashboard-banner-section .row.mb-4 > [class*="col-"] {
+    display: flex;
+}
+
+.dashboard-banner-section .row.mb-4 .card {
+    width: 100%;
+    height: 100%;
+}
+
+.dashboard-banner-section .row.mb-4 .card-body {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Fix stat card content layout */
+.dashboard-banner-section .row.mb-4 .card-body > .d-flex {
+    width: 100%;
+}
+
+/* Fix stat card label - reserve space for 2 lines */
+.dashboard-banner-section .row.mb-4 .card-body h6.text-gray-9 {
+    line-height: 1.4;
+    min-height: 2.8em;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 4px !important;
+}
+
+/* Avatar icon container - force flexbox centering */
+.dashboard-banner-section .avatar.avatar-lg {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+    position: relative !important;
+}
+
+/* Icon inside avatar - absolute center */
+.dashboard-banner-section .avatar.avatar-lg i {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure all transparent backgrounds maintain circle */
+.dashboard-banner-section .avatar.bg-secondary-transparent,
+.dashboard-banner-section .avatar.bg-warning-transparent,
+.dashboard-banner-section .avatar.bg-success-transparent,
+.dashboard-banner-section .avatar.bg-info-transparent {
     border-radius: 50% !important;
 }
 
@@ -305,3 +702,398 @@
     transform: translateY(-2px);
     transition: all 0.3s ease;
 }
+
+/* =============================================
+   Dashboard Banner Section - Same as Welcome Page
+   ============================================= */
+.dashboard-banner-section {
+    position: relative;
+    background-color: #392C7D;
+    padding: 155px 0 80px;
+    z-index: 0;
+    overflow: hidden;
+    min-height: calc(100vh - 80px);
+}
+
+@media (max-width: 991.98px) {
+    .dashboard-banner-section {
+        padding: 105px 0 50px;
+    }
+}
+
+/* Dark mode - gradient from purple to dark */
+.dark-mode .dashboard-banner-section {
+    background: linear-gradient(180deg, #392C7D 0%, #1a1a2e 400px, #0f172a 100%);
+}
+
+/* Light mode cards on purple background need darker styling */
+.dashboard-banner-section .card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-banner-section .settings-sidebar {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode cards on gradient background */
+.dark-mode .dashboard-banner-section .card {
+    background-color: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .dashboard-banner-section .settings-sidebar {
+    background-color: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Profile card on dashboard */
+.dashboard-banner-section .profile-card {
+    border-radius: 10px;
+}
+
+.dark-mode .dashboard-banner-section .profile-card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* =============================================
+   Dark Mode Modal Styling
+   ============================================= */
+.dark-mode .modal-content {
+    background-color: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode .modal-header {
+    background-color: #334155 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode .modal-header .modal-title {
+    color: #f1f5f9 !important;
+}
+
+.dark-mode .modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.dark-mode .modal-body {
+    color: #cbd5e1 !important;
+}
+
+.dark-mode .modal-body p {
+    color: #cbd5e1 !important;
+}
+
+.dark-mode .modal-body .form-control {
+    background-color: #263448 !important;
+    border-color: #475569 !important;
+    color: #e2e8f0 !important;
+}
+
+.dark-mode .modal-body .form-control:focus {
+    background-color: #334155 !important;
+    border-color: #60a5fa !important;
+}
+
+.dark-mode .modal-footer {
+    background-color: #334155 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* =============================================
+   Course Card Styling (Trainer Manage Courses)
+   ============================================= */
+
+/* Course Card */
+.course-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-2px);
+}
+
+.dark-mode .course-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Course Title */
+.course-card .course-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.dark-mode .course-card .course-title {
+    color: #f1f5f9;
+}
+
+/* Status Badge */
+.course-card .course-status-badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+
+.course-card .course-status-badge.status-open {
+    background-color: rgba(34, 197, 94, 0.15) !important;
+    color: #22c55e !important;
+}
+
+.course-card .course-status-badge.status-closed {
+    background-color: rgba(148, 163, 184, 0.15) !important;
+    color: #94a3b8 !important;
+}
+
+/* Category */
+.course-card .course-category {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+}
+
+.dark-mode .course-card .course-category {
+    color: #94a3b8;
+}
+
+.course-card .course-category i {
+    font-size: 0.9rem;
+}
+
+/* Description */
+.course-card .course-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.dark-mode .course-card .course-description {
+    color: #cbd5e1;
+}
+
+/* Course Footer */
+.course-card .course-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .course-card .course-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Price */
+.course-card .course-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.course-card .course-price .price-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dark-mode .course-card .course-price .price-label {
+    color: #64748b;
+}
+
+.course-card .course-price .price-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.dark-mode .course-card .course-price .price-value {
+    color: #60a5fa;
+}
+
+/* Action Buttons */
+.course-card .btn-course-action {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.course-card .btn-course-action i {
+    font-size: 0.9rem;
+}
+
+/* Materials Button */
+.dark-mode .course-card .btn-materials {
+    background-color: rgba(96, 165, 250, 0.15);
+    border: none;
+    color: #60a5fa;
+}
+
+.dark-mode .course-card .btn-materials:hover {
+    background-color: rgba(96, 165, 250, 0.3);
+    color: #93c5fd;
+}
+
+/* Edit Button */
+.dark-mode .course-card .btn-edit {
+    background-color: rgba(148, 163, 184, 0.15);
+    border: none;
+    color: #94a3b8;
+}
+
+.dark-mode .course-card .btn-edit:hover {
+    background-color: rgba(148, 163, 184, 0.3);
+    color: #cbd5e1;
+}
+
+/* Delete Button */
+.dark-mode .course-card .btn-delete {
+    background-color: rgba(248, 113, 113, 0.15);
+    border: none;
+    color: #f87171;
+}
+
+.dark-mode .course-card .btn-delete:hover {
+    background-color: rgba(248, 113, 113, 0.3);
+    color: #fca5a5;
+}
+
+/* =============================================
+   Materials Table Styling
+   ============================================= */
+
+/* Materials Table */
+.materials-table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.dark-mode .materials-table thead th {
+    background-color: #334155 !important;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode .materials-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.dark-mode .materials-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark-mode .materials-table tbody td {
+    padding: 14px 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Material Title */
+.dark-mode .materials-table .material-title {
+    color: #f1f5f9;
+    font-weight: 500;
+}
+
+/* Material Filename */
+.dark-mode .materials-table .material-filename {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Material Size */
+.dark-mode .materials-table .material-size {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+/* Material Date */
+.dark-mode .materials-table .material-date {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+/* Material Type Badge */
+.material-type-badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.material-type-badge i {
+    font-size: 0.8rem;
+}
+
+/* Video Badge */
+.dark-mode .material-type-badge.type-video {
+    background-color: rgba(168, 85, 247, 0.15) !important;
+    color: #a855f7 !important;
+}
+
+/* Document Badge */
+.dark-mode .material-type-badge.type-document {
+    background-color: rgba(59, 130, 246, 0.15) !important;
+    color: #3b82f6 !important;
+}
+
+/* Material Action Buttons */
+.btn-material-action {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-material-action i {
+    font-size: 1rem;
+}
+
+/* Download Button */
+.dark-mode .btn-material-action.btn-download {
+    background-color: rgba(96, 165, 250, 0.15);
+    border: none;
+    color: #60a5fa;
+}
+
+.dark-mode .btn-material-action.btn-download:hover {
+    background-color: rgba(96, 165, 250, 0.3);
+    color: #93c5fd;
+}
+
+/* Delete Button */
+.dark-mode .btn-material-action.btn-delete {
+    background-color: rgba(248, 113, 113, 0.15);
+    border: none;
+    color: #f87171;
+}
+
+.dark-mode .btn-material-action.btn-delete:hover {
+    background-color: rgba(248, 113, 113, 0.3);
+    color: #fca5a5;
+}
+
