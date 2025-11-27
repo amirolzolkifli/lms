@@ -813,6 +813,7 @@
 /* Course Card */
 .course-card {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
 }
 
 .course-card:hover {
@@ -821,6 +822,30 @@
 
 .dark-mode .course-card:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Course Cover Image */
+.course-card .course-cover-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card .course-cover-image img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-cover-image img {
+    transform: scale(1.05);
+}
+
+.course-card .course-cover-image .course-status-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
 }
 
 /* Course Title */
@@ -1073,7 +1098,64 @@
     font-size: 1rem;
 }
 
+/* View Button */
+.btn-material-action.btn-view {
+    background-color: rgba(34, 197, 94, 0.15);
+    border: none;
+    color: #22c55e;
+}
+
+.btn-material-action.btn-view:hover {
+    background-color: rgba(34, 197, 94, 0.3);
+    color: #4ade80;
+}
+
+.dark-mode .btn-material-action.btn-view {
+    background-color: rgba(34, 197, 94, 0.15);
+    border: none;
+    color: #22c55e;
+}
+
+.dark-mode .btn-material-action.btn-view:hover {
+    background-color: rgba(34, 197, 94, 0.3);
+    color: #4ade80;
+}
+
+/* Edit Button */
+.btn-material-action.btn-edit {
+    background-color: rgba(251, 191, 36, 0.15);
+    border: none;
+    color: #f59e0b;
+}
+
+.btn-material-action.btn-edit:hover {
+    background-color: rgba(251, 191, 36, 0.3);
+    color: #fbbf24;
+}
+
+.dark-mode .btn-material-action.btn-edit {
+    background-color: rgba(251, 191, 36, 0.15);
+    border: none;
+    color: #f59e0b;
+}
+
+.dark-mode .btn-material-action.btn-edit:hover {
+    background-color: rgba(251, 191, 36, 0.3);
+    color: #fbbf24;
+}
+
 /* Download Button */
+.btn-material-action.btn-download {
+    background-color: rgba(96, 165, 250, 0.15);
+    border: none;
+    color: #60a5fa;
+}
+
+.btn-material-action.btn-download:hover {
+    background-color: rgba(96, 165, 250, 0.3);
+    color: #93c5fd;
+}
+
 .dark-mode .btn-material-action.btn-download {
     background-color: rgba(96, 165, 250, 0.15);
     border: none;
@@ -1086,6 +1168,17 @@
 }
 
 /* Delete Button */
+.btn-material-action.btn-delete {
+    background-color: rgba(248, 113, 113, 0.15);
+    border: none;
+    color: #f87171;
+}
+
+.btn-material-action.btn-delete:hover {
+    background-color: rgba(248, 113, 113, 0.3);
+    color: #fca5a5;
+}
+
 .dark-mode .btn-material-action.btn-delete {
     background-color: rgba(248, 113, 113, 0.15);
     border: none;
@@ -1095,5 +1188,213 @@
 .dark-mode .btn-material-action.btn-delete:hover {
     background-color: rgba(248, 113, 113, 0.3);
     color: #fca5a5;
+}
+
+/* =============================================
+   Breadcrumb Bar - Purple Background
+   ============================================= */
+.breadcrumb-bar {
+    background-color: #392C7D !important;
+    padding: 40px 0;
+}
+
+.dark-mode .breadcrumb-bar {
+    background-color: #392C7D !important;
+}
+
+.breadcrumb-bar .breadcrumb-title {
+    color: #FFFFFF !important;
+}
+
+.breadcrumb-bar .breadcrumb {
+    background: transparent;
+}
+
+.breadcrumb-bar .breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.breadcrumb-bar .breadcrumb-item a:hover {
+    color: #FFFFFF !important;
+}
+
+.breadcrumb-bar .breadcrumb-item.active {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.breadcrumb-bar .breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* =============================================
+   Public Course Grid Page Styling
+   ============================================= */
+.course-content {
+    background-color: #0f172a;
+}
+
+.dark-mode .course-content {
+    background-color: #0f172a;
+}
+
+/* Filter sidebar */
+.dark-mode .filter-clear {
+    background-color: #1e293b;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .filter-clear h5 {
+    color: #f1f5f9;
+}
+
+.dark-mode .filter-clear .clear-text {
+    color: #60a5fa;
+}
+
+.dark-mode .accordion-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .accordion-item:last-child {
+    border-bottom: none;
+}
+
+.dark-mode .accordion-button {
+    background-color: transparent;
+    color: #f1f5f9;
+    padding: 15px 0;
+}
+
+.dark-mode .accordion-button:not(.collapsed) {
+    background-color: transparent;
+    color: #f1f5f9;
+    box-shadow: none;
+}
+
+.dark-mode .accordion-button:focus {
+    box-shadow: none;
+}
+
+.dark-mode .accordion-body {
+    padding: 0 0 15px 0;
+}
+
+.dark-mode .custom_check {
+    color: #cbd5e1;
+}
+
+.dark-mode .custom_check .checkmark {
+    background-color: #334155;
+    border-color: #475569;
+}
+
+.dark-mode .custom_check input:checked ~ .checkmark {
+    background-color: #60a5fa;
+    border-color: #60a5fa;
+}
+
+/* Showing list / filter bar */
+.dark-mode .showing-list {
+    background-color: #1e293b;
+    border-radius: 10px;
+    padding: 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .showing-list h6 {
+    color: #94a3b8;
+}
+
+.dark-mode .showing-list .form-select {
+    background-color: #334155;
+    border-color: #475569;
+    color: #e2e8f0;
+}
+
+.dark-mode .showing-list .search-group {
+    background-color: #334155;
+    border-color: #475569;
+}
+
+.dark-mode .showing-list .search-group input {
+    background-color: transparent;
+    color: #e2e8f0;
+}
+
+.dark-mode .showing-list .search-group i {
+    color: #94a3b8;
+}
+
+/* Course cards on public page */
+.dark-mode .course-item-two {
+    background-color: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
+
+.dark-mode .course-item-two:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .course-item-two .course-content {
+    background-color: transparent;
+}
+
+.dark-mode .course-item-two .course-content h6 a {
+    color: #f1f5f9;
+}
+
+.dark-mode .course-item-two .course-content h6 a:hover {
+    color: #60a5fa;
+}
+
+.dark-mode .course-item-two .course-content p {
+    color: #94a3b8;
+}
+
+.dark-mode .course-item-two .course-content .link-default {
+    color: #cbd5e1;
+}
+
+.dark-mode .course-item-two .badge.bg-light {
+    background-color: #334155 !important;
+    color: #cbd5e1 !important;
+}
+
+.dark-mode .course-item-two .text-secondary {
+    color: #60a5fa !important;
+}
+
+/* Pagination */
+.dark-mode .pagination-text {
+    color: #94a3b8;
+}
+
+.dark-mode .pagination.lms-page .page-item .page-link {
+    background-color: #334155;
+    border-color: #475569;
+    color: #cbd5e1;
+}
+
+.dark-mode .pagination.lms-page .page-item.active .page-link {
+    background-color: #60a5fa;
+    border-color: #60a5fa;
+    color: #ffffff;
+}
+
+.dark-mode .pagination.lms-page .page-item .page-link:hover {
+    background-color: #475569;
+    color: #f1f5f9;
+}
+
+.dark-mode .pagination.lms-page .page-item.disabled .page-link {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #64748b;
 }
 

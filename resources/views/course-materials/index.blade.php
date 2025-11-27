@@ -54,6 +54,7 @@
                                 <tr>
                                     <th>Title</th>
                                     <th>Type</th>
+                                    <th>Visibility</th>
                                     <th>File Name</th>
                                     <th>Size</th>
                                     <th>Uploaded</th>
@@ -70,13 +71,30 @@
                                             {{ ucfirst($material->type) }}
                                         </span>
                                     </td>
+                                    <td>
+                                        <span class="badge {{ $material->visibility === 'public' ? 'bg-success' : 'bg-secondary' }}">
+                                            <i class="isax isax-{{ $material->visibility === 'public' ? 'global' : 'lock' }} me-1"></i>
+                                            {{ ucfirst($material->visibility) }}
+                                        </span>
+                                    </td>
                                     <td class="material-filename">{{ $material->file_name }}</td>
                                     <td class="material-size">{{ $material->file_size_formatted }}</td>
                                     <td class="material-date">{{ $material->created_at->format('d M Y') }}</td>
                                     <td>
                                         <div class="d-flex gap-2 justify-content-center">
+                                            <a href="{{ route('app.course-materials.show', [$course, $material]) }}"
+                                               class="btn btn-sm btn-material-action btn-view"
+                                               title="View">
+                                                <i class="isax isax-eye"></i>
+                                            </a>
+                                            <a href="{{ route('app.course-materials.edit', [$course, $material]) }}"
+                                               class="btn btn-sm btn-material-action btn-edit"
+                                               title="Edit">
+                                                <i class="isax isax-edit-2"></i>
+                                            </a>
                                             <a href="{{ route('app.course-materials.download', [$course, $material]) }}"
-                                               class="btn btn-sm btn-material-action btn-download">
+                                               class="btn btn-sm btn-material-action btn-download"
+                                               title="Download">
                                                 <i class="isax isax-document-download"></i>
                                             </a>
                                             <form action="{{ route('app.course-materials.destroy', [$course, $material]) }}"
@@ -85,7 +103,7 @@
                                                   onsubmit="return confirm('Are you sure you want to delete this material?')">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-material-action btn-delete">
+                                                <button type="submit" class="btn btn-sm btn-material-action btn-delete" title="Delete">
                                                     <i class="isax isax-trash"></i>
                                                 </button>
                                             </form>

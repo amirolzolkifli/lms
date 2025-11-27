@@ -14,9 +14,31 @@
                 <h5 class="mb-0">Edit Course</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('app.courses.update', $course) }}" method="POST">
+                <form action="{{ route('app.courses.update', $course) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
+
+                    <div class="mb-4">
+                        <label for="cover_image" class="form-label">Cover Image</label>
+                        <div class="cover-image-upload">
+                            <div class="cover-preview-container mb-3" id="coverPreviewContainer" style="{{ $course->cover_image ? '' : 'display: none;' }}">
+                                <img id="coverPreview" src="{{ $course->cover_image_url ?? '' }}" alt="Cover Preview" class="img-fluid rounded" style="max-height: 200px; width: 100%; object-fit: cover;">
+                                <button type="button" class="btn btn-sm btn-danger mt-2" id="removeCoverBtn">
+                                    <i class="isax isax-trash me-1"></i>Remove
+                                </button>
+                            </div>
+                            <input type="hidden" name="remove_cover_image" id="remove_cover_image" value="0">
+                            <input type="file"
+                                   class="form-control @error('cover_image') is-invalid @enderror"
+                                   id="cover_image"
+                                   name="cover_image"
+                                   accept="image/jpeg,image/png,image/jpg,image/webp">
+                            @error('cover_image')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                            <small class="form-text text-muted">Optional. Max 10MB. Recommended size: 1200x675 (16:9 ratio). Supported formats: JPEG, PNG, WebP</small>
+                        </div>
+                    </div>
 
                     <div class="mb-4">
                         <label for="title" class="form-label">Course Title <span class="text-danger">*</span></label>
@@ -103,3 +125,38 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const coverInput = document.getElementById('cover_image');
+    const previewContainer = document.getElementById('coverPreviewContainer');
+    const preview = document.getElementById('coverPreview');
+    const removeBtn = document.getElementById('removeCoverBtn');
+    const removeCoverInput = document.getElementById('remove_cover_image');
+    const hasExistingImage = {{ $course->cover_image ? 'true' : 'false' }};
+
+    coverInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                previewContainer.style.display = 'block';
+                removeCoverInput.value = '0';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    removeBtn.addEventListener('click', function() {
+        coverInput.value = '';
+        preview.src = '';
+        previewContainer.style.display = 'none';
+        if (hasExistingImage) {
+            removeCoverInput.value = '1';
+        }
+    });
+});
+</script>
+@endpush

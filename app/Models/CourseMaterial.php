@@ -13,7 +13,8 @@ class CourseMaterial extends Model
         'file_path',
         'file_name',
         'file_size',
-        'mime_type'
+        'mime_type',
+        'visibility'
     ];
 
     protected $casts = [

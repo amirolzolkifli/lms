@@ -14,8 +14,13 @@ class AuthenticatedSessionController extends Controller
     /**
      * Display the login view.
      */
-    public function create(): View
+    public function create(Request $request): View
     {
+        // Store redirect URL if provided
+        if ($request->has('redirect')) {
+            session()->put('url.intended', $request->redirect);
+        }
+
         return view('auth.login');
     }
 

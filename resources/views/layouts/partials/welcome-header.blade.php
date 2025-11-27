@@ -32,8 +32,8 @@
                     <li class="{{ request()->is('about') ? 'active' : '' }}">
                         <a href="{{ url('/about') }}">About</a>
                     </li>
-                    <li class="{{ request()->is('courses') ? 'active' : '' }}">
-                        <a href="{{ url('/courses') }}">Courses</a>
+                    <li class="{{ request()->is('courses*') ? 'active' : '' }}">
+                        <a href="{{ route('courses.index') }}">Courses</a>
                     </li>
                     <li class="{{ request()->is('trainers') ? 'active' : '' }}">
                         <a href="{{ url('/trainers') }}">Trainer</a>
@@ -115,8 +115,8 @@
                     <i class="isax isax-info-circle me-2"></i>About
                 </a>
             </li>
-            <li class="{{ request()->is('courses') ? 'active' : '' }}">
-                <a href="{{ url('/courses') }}">
+            <li class="{{ request()->is('courses*') ? 'active' : '' }}">
+                <a href="{{ route('courses.index') }}">
                     <i class="isax isax-book me-2"></i>Courses
                 </a>
             </li>

@@ -61,6 +61,21 @@
                         <small class="form-text text-muted">Maximum file size: 100MB</small>
                     </div>
 
+                    <div class="mb-4">
+                        <label for="visibility" class="form-label">Visibility <span class="text-danger">*</span></label>
+                        <select class="form-select @error('visibility') is-invalid @enderror"
+                                id="visibility"
+                                name="visibility"
+                                required>
+                            <option value="private" {{ old('visibility', 'private') == 'private' ? 'selected' : '' }}>Private</option>
+                            <option value="public" {{ old('visibility') == 'public' ? 'selected' : '' }}>Public</option>
+                        </select>
+                        @error('visibility')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                        <small class="form-text text-muted">Public materials can be viewed by anyone without purchasing the course</small>
+                    </div>
+
                     <div class="alert alert-info">
                         <i class="isax isax-info-circle me-2"></i>
                         <strong>Note:</strong> Files are counted across all your courses. Make sure you don't exceed your plan limit.

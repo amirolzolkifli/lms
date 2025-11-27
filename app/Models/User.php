@@ -26,6 +26,7 @@ class User extends Authenticatable
         'logo',
         'plan',
         'validity',
+        'trainer_settings',
     ];
 
     /**
@@ -36,6 +37,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'trainer_settings',
     ];
 
     /**
@@ -50,6 +52,7 @@ class User extends Authenticatable
             'password' => 'hashed',
             'roles' => 'array',
             'validity' => 'date',
+            'trainer_settings' => 'array',
         ];
     }
 
@@ -64,5 +67,61 @@ class User extends Authenticatable
             get: fn ($value) => $value ? json_decode($value, true) : ['student'],
             set: fn ($value) => json_encode($value ?? ['student'])
         );
+    }
+
+    /**
+     * Get a trainer setting value.
+     */
+    public function getTrainerSetting(string $key, $default = null)
+    {
+        return $this->trainer_settings[$key] ?? $default;
+    }
+
+    /**
+     * Set a trainer setting value.
+     */
+    public function setTrainerSetting(string $key, $value): void
+    {
+        $settings = $this->trainer_settings ?? [];
+        $settings[$key] = $value;
+        $this->trainer_settings = $settings;
+    }
+
+    /**
+     * Get the courses created by this user (trainer).
+     */
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
+
+    /**
+     * Get the enrollments for this user (student).
+     */
+    public function enrollments()
+    {
+        return $this->hasMany(Enrollment::class);
+    }
+
+    /**
+     * Get the enrolled courses for this user.
+     */
+    public function enrolledCourses()
+    {
+        return $this->belongsToMany(Course::class, 'enrollments')
+            ->wherePivot('status', 'active')
+            ->wherePivot('payment_status', 'paid');
+    }
+
+    /**
+     * Check if user is enrolled in a course.
+     */
+    public function isEnrolledIn(Course $course)
+    {
+        return $this->enrollments()
+            ->where('course_id', $course->id)
+            ->where('status', 'active')
+            ->where('payment_status', 'paid')
+            ->exists();
     }
 }

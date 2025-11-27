@@ -28,6 +28,16 @@
                     <i class="isax isax-book me-2"></i><span>My Courses</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('app.trainer.enrollments.index') }}" class="d-inline-flex align-items-center {{ request()->routeIs('app.trainer.enrollments.*') ? 'active' : '' }}">
+                    <i class="isax isax-people me-2"></i><span>Enrollments</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('app.trainer.settings.index') }}" class="d-inline-flex align-items-center {{ request()->routeIs('app.trainer.settings.*') ? 'active' : '' }}">
+                    <i class="isax isax-setting-2 me-2"></i><span>Payment Settings</span>
+                </a>
+            </li>
         </ul>
         @endif
 

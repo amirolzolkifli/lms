@@ -47,13 +47,24 @@
                 @foreach($courses as $course)
                 <div class="col-md-6 mb-4">
                     <div class="card h-100 course-card">
+                        <!-- Cover Image -->
+                        @if($course->thumbnail_url)
+                            <div class="course-cover-image">
+                                <img src="{{ $course->thumbnail_url }}" alt="{{ $course->title }}" class="card-img-top">
+                                <span class="badge course-status-badge {{ $course->status === 'open' ? 'status-open' : 'status-closed' }}">
+                                    {{ ucfirst($course->status) }}
+                                </span>
+                            </div>
+                        @endif
                         <div class="card-body d-flex flex-column">
                             <!-- Header: Title and Status Badge -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <h5 class="course-title mb-0 pe-2">{{ $course->title }}</h5>
-                                <span class="badge course-status-badge {{ $course->status === 'open' ? 'status-open' : 'status-closed' }}">
-                                    {{ ucfirst($course->status) }}
-                                </span>
+                                @if(!$course->thumbnail_url)
+                                    <span class="badge course-status-badge {{ $course->status === 'open' ? 'status-open' : 'status-closed' }}">
+                                        {{ ucfirst($course->status) }}
+                                    </span>
+                                @endif
                             </div>
 
                             <!-- Category -->

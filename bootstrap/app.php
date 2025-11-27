@@ -31,6 +31,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->validateCsrfTokens(except: [
             'webhook/chip',
+            'webhook/enrollment/chip',
         ]);
 
         $middleware->alias([

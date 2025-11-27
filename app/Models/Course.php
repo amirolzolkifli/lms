@@ -14,7 +14,9 @@ class Course extends Model
         'slug',
         'description',
         'price',
-        'status'
+        'status',
+        'cover_image',
+        'cover_image_thumbnail'
     ];
 
     protected $casts = [
@@ -58,5 +60,43 @@ class Course extends Model
     public function materials()
     {
         return $this->hasMany(CourseMaterial::class);
+    }
+
+    public function enrollments()
+    {
+        return $this->hasMany(Enrollment::class);
+    }
+
+    public function activeEnrollments()
+    {
+        return $this->hasMany(Enrollment::class)->active();
+    }
+
+    /**
+     * Check if a user or guest is enrolled in this course
+     */
+    public function isEnrolled($userOrEmail)
+    {
+        if ($userOrEmail instanceof User) {
+            return $this->enrollments()->active()->where('user_id', $userOrEmail->id)->exists();
+        }
+
+        return $this->enrollments()->active()->where('guest_email', $userOrEmail)->exists();
+    }
+
+    public function getCoverImageUrlAttribute()
+    {
+        if ($this->cover_image) {
+            return route('app.courses.cover', ['course' => $this->id, 'type' => 'cover']);
+        }
+        return null;
+    }
+
+    public function getThumbnailUrlAttribute()
+    {
+        if ($this->cover_image_thumbnail) {
+            return route('app.courses.cover', ['course' => $this->id, 'type' => 'thumbnail']);
+        }
+        return null;
     }
 }
