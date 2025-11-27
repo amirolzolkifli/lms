@@ -54,21 +54,27 @@ class SettingController extends Controller
             'pro_student_limit' => 'required|integer|min:0',
         ]);
 
-        // Update Basic Plan
-        Plan::where('name', 'Basic Plan')->update([
-            'price_monthly' => $request->basic_price,
-            'course_limit' => $request->basic_course_limit,
-            'content_upload_limit' => $request->basic_content_limit,
-            'student_limit' => $request->basic_student_limit,
-        ]);
+        // Update or Create Basic Plan
+        Plan::updateOrCreate(
+            ['name' => 'Basic Plan'],
+            [
+                'price_monthly' => $request->basic_price,
+                'course_limit' => $request->basic_course_limit,
+                'content_upload_limit' => $request->basic_content_limit,
+                'student_limit' => $request->basic_student_limit,
+            ]
+        );
 
-        // Update Pro Plan
-        Plan::where('name', 'Pro Plan')->update([
-            'price_monthly' => $request->pro_price,
-            'course_limit' => $request->pro_course_limit,
-            'content_upload_limit' => $request->pro_content_limit,
-            'student_limit' => $request->pro_student_limit,
-        ]);
+        // Update or Create Pro Plan
+        Plan::updateOrCreate(
+            ['name' => 'Pro Plan'],
+            [
+                'price_monthly' => $request->pro_price,
+                'course_limit' => $request->pro_course_limit,
+                'content_upload_limit' => $request->pro_content_limit,
+                'student_limit' => $request->pro_student_limit,
+            ]
+        );
 
         return redirect()->route('app.admin.settings.index', ['tab' => 'pricing'])
             ->with('success', 'Pricing settings updated successfully!');
